@@ -7,6 +7,7 @@ from sklearn.svm import SVC
 def main():
     df = pd.read_csv('data/input.csv')
     data_other = df.drop(columns=['peak_load'],axis=1)
+    data_other = df.drop(columns=['index'],axis=1)
     data_peak  = df['peak_load']
 
     # split data into 70% training and 30% testing
