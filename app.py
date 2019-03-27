@@ -47,6 +47,7 @@ def main(mode):
         input_predict = input_predict.drop(columns=['peak_load','index','Taipei','newTaipei','taichung',\
         'kaohsiung' ,'taoyuan',	'tainan', 'changhua', 'pingtung', 'yunlin', 'hsinchu'],axis=1)
         predict_peak = support_vector_classifier.predict(input_predict)
+        print(predict_peak)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
