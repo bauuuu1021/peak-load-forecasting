@@ -43,11 +43,16 @@ def main(mode):
         print('RMSE\t\t', (sumRMSE/len(test_peakList))**(1/2))
     
     else:
+        # load forecasting data as predict material
         input_predict = pd.read_csv('data/input_predict.csv')
         input_predict = input_predict.drop(columns=['peak_load','index','Taipei','newTaipei','taichung',\
         'kaohsiung' ,'taoyuan',	'tainan', 'changhua', 'pingtung', 'yunlin', 'hsinchu'],axis=1)
+        
+        # standardize data by feature scaling
+        input_predict = sc.fit_transform(input_predict)
+
         predict_peak = support_vector_classifier.predict(input_predict)
-        print(predict_peak)
+        print('\n\n', predict_peak)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
