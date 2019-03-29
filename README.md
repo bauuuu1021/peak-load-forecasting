@@ -10,4 +10,4 @@ This is a project to forecast peak load of Taiwan Power Company.
     python3 app.py
     ```
 ## Development Record
-File name : `forecasting.ipynb` or click [jupyter note](https://nbviewer.jupyter.org/github/bauuuu1021/peak-load-forecasting/blob/master/forecasting.ipynb)
+See my [jupyter note](https://nbviewer.jupyter.org/github/bauuuu1021/peak-load-forecasting/blob/master/forecasting.ipynb)
