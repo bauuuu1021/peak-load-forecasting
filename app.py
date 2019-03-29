@@ -45,14 +45,22 @@ def main(mode):
     else:
         # load forecasting data as predict material
         input_predict = pd.read_csv('data/input_predict.csv')
+        dateOutput = input_predict['date']
+        dateOutput = dateOutput.tolist()
         input_predict = input_predict.drop(columns=['peak_load','index','Taipei','newTaipei','taichung',\
         'kaohsiung' ,'taoyuan',	'tainan', 'changhua', 'pingtung', 'yunlin', 'hsinchu'],axis=1)
         
         # standardize data by feature scaling
         input_predict = sc.fit_transform(input_predict)
 
+        # predict and export result to submission.csv
         predict_peak = support_vector_classifier.predict(input_predict)
         print('\n\n', predict_peak)
+        fp = open("submission.csv", "w")
+        fp.write("date,peak_load(MW)\n")
+        for i in range(len(predict_peak)):
+            fp.write("%d,%d\n"%(dateOutput[i], predict_peak[i]))
+        fp.close()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
