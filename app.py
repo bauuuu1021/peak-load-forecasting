@@ -7,6 +7,13 @@ from sklearn.svm import SVC
 
 def main(mode):
     df = pd.read_csv('data/input_train.csv')
+
+    # if date that is weekend or special holiday, set "holiday" 
+    condition = np.logical_or(df['week_day']==6, df['week_day']==0)
+    week_end = np.where(condition, 1, 0)
+    df['holiday'] = week_end | df['holiday']
+
+    # drop unnecessary data and split "other" and target" 
     data_other = df.drop(columns=['peak_load','index','Taipei','newTaipei','taichung',\
     'kaohsiung' ,'taoyuan',	'tainan', 'changhua', 'pingtung', 'yunlin', 'hsinchu'],axis=1)
     data_peak  = df['peak_load']
@@ -45,6 +52,9 @@ def main(mode):
     else:
         # load forecasting data as predict material
         input_predict = pd.read_csv('data/input_predict.csv')
+        condition = np.logical_or(input_predict['week_day']==6, input_predict['week_day']==0)
+        week_end = np.where(condition, 1, 0)
+        input_predict['holiday'] = week_end | input_predict['holiday']
         dateOutput = input_predict['date']
         dateOutput = dateOutput.tolist()
         input_predict = input_predict.drop(columns=['peak_load','index','Taipei','newTaipei','taichung',\

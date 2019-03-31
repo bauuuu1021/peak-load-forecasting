@@ -1,5 +1,6 @@
 .ipynb_checkpoints/development_record-checkpoint.ipynb
 .ipynb_checkpoints/forecasting-checkpoint.ipynb
+data/.~lock.input_train.csv#
 data/.~lock.input_predict.csv#
 data/test.csv
 test.py
