@@ -14,7 +14,7 @@ def main(mode):
     df['holiday'] = week_end | df['holiday']
 
     # drop unnecessary data and split "other" and target" 
-    data_other = df.drop(columns=['peak_load','index','Taipei','newTaipei','taichung',\
+    data_other = df.drop(columns=['peak_load','Taipei','newTaipei','taichung',\
     'kaohsiung' ,'taoyuan',	'tainan', 'changhua', 'pingtung', 'yunlin', 'hsinchu'],axis=1)
     data_peak  = df['peak_load']
 
@@ -57,7 +57,7 @@ def main(mode):
         input_predict['holiday'] = week_end | input_predict['holiday']
         dateOutput = input_predict['date']
         dateOutput = dateOutput.tolist()
-        input_predict = input_predict.drop(columns=['peak_load','index','Taipei','newTaipei','taichung',\
+        input_predict = input_predict.drop(columns=['peak_load','Taipei','newTaipei','taichung',\
         'kaohsiung' ,'taoyuan',	'tainan', 'changhua', 'pingtung', 'yunlin', 'hsinchu'],axis=1)
         
         # standardize data by feature scaling
