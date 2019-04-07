@@ -1,6 +1,6 @@
 # Peak Load Forecasting
 This is a project to forecast peak power load of Taiwan Power Company.<br>
-Duration : Apr 2$^{nd}$ to Apr 8$^{th}$, 2019
+Duration : Apr 2 to Apr 8, 2019
 ## Environment Setup
 * Module installation
     ```
