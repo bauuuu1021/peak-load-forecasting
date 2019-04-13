@@ -12,3 +12,7 @@ Duration : Apr 2 to Apr 8, 2019
     ```
 ## Development Record
 See my [jupyter note](https://nbviewer.jupyter.org/github/bauuuu1021/peak-load-forecasting/blob/master/forecasting.ipynb)
+
+## Achievement
+* average [RMSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation) is 1007.07
+* average [percentage error](https://en.wikipedia.org/wiki/Mean_percentage_error) is 3.01%
