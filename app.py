@@ -5,6 +5,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
+# to avoid warnings
+import warnings
+warnings.filterwarnings("ignore")
+
 def main(mode):
     df = pd.read_csv('data/input_train.csv')
 
